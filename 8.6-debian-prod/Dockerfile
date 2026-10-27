@@ -1,4 +1,4 @@
-FROM php:8.6.0RC3-fpm-bookworm
+FROM php:8.6-rc-fpm-trixie
 
 ENV ASUSER= \
     UID= \
@@ -67,7 +67,7 @@ RUN useradd -m -u 1337 kool \
         mysqli \
         ftp \
     && pie install phpredis/phpredis:dev-develop@dev \
-    #&& pie install imagick/imagick \
+    && pie install imagick/imagick:dev-master \
     # composer
     && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
     && curl -sS https://getcomposer.org/installer | php -- --1 --install-dir=/usr/local/bin --filename=composer1 \

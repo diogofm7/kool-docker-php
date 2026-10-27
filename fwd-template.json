@@ -825,7 +825,7 @@
         {
             "name": "8.6-debian",
             "data": {
-                "from": "php:8.6-fpm-bookworm",
+                "from": "php:8.6-fpm-trixie",
                 "prod": false,
                 "nginx": false,
                 "version": "8.6"
@@ -852,7 +852,7 @@
         {
             "name": "8.6-debian-prod",
             "data": {
-                "from": "php:8.6-fpm-bookworm",
+                "from": "php:8.6-fpm-trixie",
                 "prod": true,
                 "nginx": false,
                 "version": "8.6"
