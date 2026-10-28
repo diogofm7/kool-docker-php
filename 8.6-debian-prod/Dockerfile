@@ -36,7 +36,7 @@ RUN useradd -m -u 1337 kool \
         bash sed git openssh-client procps \
         libfreetype6 libpng16-16t64 libjpeg62-turbo libzip5 ghostscript imagemagick \
         jpegoptim optipng pngquant gifsicle \
-        libldap2 libpq5 libicu76 less \
+        libldap2 libpq5 libicu76 libonig5 libwebp7 less \
     # build-deps
     && cp "/usr/local/etc/php/php.ini-production" "/usr/local/etc/php/php.ini" \
     && apt-get install -y --no-install-recommends \

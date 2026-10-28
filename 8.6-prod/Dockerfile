@@ -29,16 +29,16 @@ RUN adduser -D -u 1337 kool \
     && mv dockerize /usr/local/bin/dockerize \
     # deps
     && apk --no-cache add su-exec bash sed git openssh-client icu shadow procps \
-        freetype libpng libjpeg-turbo libzip-dev ghostscript imagemagick \
+        freetype libpng libjpeg-turbo libzip ghostscript imagemagick \
         jpegoptim optipng pngquant gifsicle libldap \
-        libpq less \
+        libpq less libwebp oniguruma \
     # build-deps
     && cp "/usr/local/etc/php/php.ini-production" "/usr/local/etc/php/php.ini" \
     && apk add --no-cache --virtual .build-deps $PHPIZE_DEPS \
         freetype-dev libpng-dev libjpeg-turbo-dev \
         icu-dev libedit-dev libxml2-dev \
         imagemagick-dev openldap-dev oniguruma-dev libwebp-dev \
-        postgresql-dev linux-headers libtool \
+        postgresql-dev linux-headers libtool libzip-dev \
     # php-ext
     && docker-php-ext-configure gd --with-freetype --with-webp --with-jpeg \
     && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
